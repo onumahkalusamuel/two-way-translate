@@ -1,0 +1,147 @@
+* {
+    transition: ease 0.5s;
+}
+.menu_item, .menu_head {
+    cursor: pointer;
+    font-weight: bold;
+}
+.menu_item:hover, .menu_head:hover {
+    color: #000;
+    text-shadow: #fff 2px 2px 2px, #fff -2px -2px 2px;
+}
+
+#header {
+    position: fixed;
+    right:0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 100;
+}
+.site-banner {
+    max-height: 100px;
+    overflow: hidden;
+    background-color: #ae7f2d;
+}
+.site-logo {
+    max-height: 100px;
+}
+
+.images {
+    display: inline-block;
+}
+
+.image {
+    height: 80px;
+    margin: 10px 30px;
+}
+
+.navbar {
+    box-shadow: 0px -2px 2px white;
+    min-height: 20px;
+    border-radius: 0px;
+    border:0;
+    margin-bottom: 0;
+}
+
+.main {
+    margin: 150px 0 60px 210px;
+}
+.main-content {
+    padding: 0;
+    width: 100%;
+}
+
+.side-nav {
+    background-color: #ae7f2d;
+    color: white;
+    min-height: 530px;
+    text-shadow: red 2px 2px 1px;
+    position: fixed;
+    margin-top: 150px;
+}
+
+ul {
+    list-style: none;
+    padding: 15px 10px 0 10px;
+    width: 100%;
+    min-height: 25px;
+}
+
+ul>ul {
+    width: 100%;
+}
+
+ul>ul>li {
+    height: 20px;
+    border-bottom: #ffffff solid;
+    margin: 10px 0;
+}
+
+.menu_head {
+    border-bottom: black solid;
+    padding-bottom: 5px;
+}
+
+.footer {
+    padding: 10px;
+    min-height: 50px;
+    background-color: #000000;
+    color: white;
+    font-weight: bolder;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    z-index: 100;
+
+}
+
+.display-inner {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.navbar-inverse .navbar-text {
+    color: #fff;
+    font-weight: bolder;
+
+}
+
+.navbar-text > a, .footer > a {
+    color: #d5cccc;
+    text-decoration: none;
+}
+
+.navbar-text > a:hover, .footer > a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.result {
+    font-weight: bold;
+    margin: 10px 15px;
+    border:1px solid red;
+}
+
+.result>p>img {
+    padding: 5px 5px 0 5px;
+    width: 200px;
+    height: 150px;    
+}
+
+.cart {
+    padding: 20px 10px;
+    position: fixed;
+    right:0;
+    top: 150px;
+    font-size:1em;
+    font-weight: bold;
+    min-height: 620px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    background-color: #c0a16b;
+}
+
+p {
+
+}

@@ -1,0 +1,194 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Two-Way Language Translation Verification</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <span>Two-way Language Translation Verification System</span> <br>
+            <img class="header-image" height="70" src="assets/img/1.png" />&nbsp;
+            <img class="header-image" height="70" src="assets/img/2.png" />&nbsp;
+            ====&nbsp;<img class="header-image" height="70" src="assets/img/3.png" />&nbsp;====&nbsp;
+            <img class="header-image" height="70" src="assets/img/4.png" />&nbsp;
+            <img class="header-image" height="70" src="assets/img/5.png" />
+
+        </div>
+        <div class="container">
+            <div class="app">
+                <form action="" id="form"  method="post" onsubmit="return false;">
+
+                    <div class="row closure">
+
+                        <div class="col-sm-6 source">
+                            <div class="">
+                                <select class="" name="sl">
+                                    <option value="ar">Arabic</option>
+                                    <option value="bg">Bulgarian</option>
+                                    <option value="my">Burmese</option>
+                                    <option value="zh-CN">Chinese (Simplified)</option>
+                                    <option value="cs">Czech</option>
+                                    <option value="da">Danish</option>
+                                    <option value="nl">Dutch</option>
+                                    <option selected value="en">English</option>
+                                    <option value="et">Estonian</option>
+                                    <option value="fr">French</option>
+                                    <option value="ka">Georgian</option>
+                                    <option value="de">German</option>
+                                    <option value="el">Greek</option>
+                                    <option value="ha">Hausa</option>
+                                    <option value="iw">Hebrew</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="ig">Igbo</option>
+                                    <option value="it">Italian</option>
+                                    <option value="ja">Japanese</option>
+                                    <option value="ko">Korean</option>
+                                    <option value="la">Latin</option>
+                                    <option value="fa">Persian</option>
+                                    <option value="pl">Polish</option>
+                                    <option value="pt">Portuguese</option>
+                                    <option value="ro">Romanian</option>
+                                    <option value="ru">Russian</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="sw">Swahili</option>
+                                    <option value="sv">Swedish</option>
+                                    <option value="yo">Yoruba</option>
+                                    <option value="zu">Zulu</option>
+                                </select>
+                            </div>
+                            <div class="">
+                                <textarea required id="st" name="st" class="" autofocus placeholder="Enter Source language text here."></textarea>
+                            </div>
+                            <div class="">
+                                <button id="translateNow" class="" >Translate</button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 translate">
+
+                            <div id="translate-loader" class="Absolute-Center hidden unfiltered">
+                                <div class="Absolute-Center" id="translater1"></div>
+                                <div class="Absolute-Center" id="translater2"></div>
+                                <div class="Absolute-Center" id="translater3"></div>
+                            </div>
+
+                            <div class="">
+                                <select class="" name="tl">
+                                    <option value="ar">Arabic</option>
+                                    <option value="bg">Bulgarian</option>
+                                    <option value="my">Burmese</option>
+                                    <option value="zh-CN">Chinese (Simplified)</option>
+                                    <option value="cs">Czech</option>
+                                    <option value="da">Danish</option>
+                                    <option value="nl">Dutch</option>
+                                    <option value="en">English</option>
+                                    <option value="et">Estonian</option>
+                                    <option selected value="fr">French</option>
+                                    <option value="ka">Georgian</option>
+                                    <option value="de">German</option>
+                                    <option value="el">Greek</option>
+                                    <option value="ha">Hausa</option>
+                                    <option value="iw">Hebrew</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="ig">Igbo</option>
+                                    <option value="it">Italian</option>
+                                    <option value="ja">Japanese</option>
+                                    <option value="ko">Korean</option>
+                                    <option value="la">Latin</option>
+                                    <option value="fa">Persian</option>
+                                    <option value="pl">Polish</option>
+                                    <option value="pt">Portuguese</option>
+                                    <option value="ro">Romanian</option>
+                                    <option value="ru">Russian</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="sw">Swahili</option>
+                                    <option value="sv">Swedish</option>
+                                    <option value="yo">Yoruba</option>
+                                    <option value="zu">Zulu</option>
+                                </select>
+                            </div>
+
+                            <div class="">
+
+                                <div id="tt" class="">Target language text will appear here.</div>
+
+                            </div>
+                            <div class="">
+                                <button id="resetNow" class="danger" >Reset</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
+        <div class="colourmap">
+            <div class="text-muted text-center h5" style="margin-top:">Colour Map </div>
+            <table>
+                <tr>
+                    <td>0%</td><td>10%</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td><td>60%</td><td>80%</td><td>90%</td><td>100%</td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript">
+                            function translate(e) {
+
+                                var a = ($("#st").val());
+
+                                if (a === "") {
+                                    console.log("error");
+                                    return;
+                                } else {
+                                    var target = $(e.target);
+                                    var returnHTML = target.html();
+                                    $('.col-sm-6.translate').addClass('filtered');
+                                    window.x = $('.col-sm-6 .translate');
+                                    $('#translate-loader').removeClass('hidden').fadeIn(300);
+                                    $("#tt").text('Target language text will appear here.');
+                                    $(e.target).html("<i class='fa fa-spin fa-circle-o-notch text-warning' /> &nbsp; Translating...")
+                                    var formData = $("#form").serialize();
+                                    $.ajax({
+                                        type: 'post',
+                                        url: 'translate.php',
+                                        data: formData,
+                                        success: function (res) {
+                                            $('#tt').html(res);
+
+                                        },
+                                        error: function () {}
+                                    }).always(function () {
+                                        $('.col-sm-6.translate').removeClass('filtered');
+                                        $('#translate-loader').addClass('hidden').fadeIn(300);
+                                        target.html(returnHTML);
+                                    })
+                                            ;
+                                }
+                            }
+
+                            $('#translateNow').on('click', function (e) {
+                                translate(e)
+                            });
+                            $('#resetNow').on('click', function (e) {
+                                e.preventDefault();
+                                console.log('Clearing all');
+                                //reseting everything
+                                $("#st").val("");
+                                $("#tt").text('Target language text will appear here.');
+                            });
+
+
+$(document).ready(function(){
+    var ht = $("tr").children();
+    ht.each(function(){
+       $(this).attr("style","background-color: hsl("+parseInt($(this).html())+",50%,50%)");
+    });
+    
+});
+        </script>
+    </body>
+</html>
